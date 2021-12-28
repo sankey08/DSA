@@ -2,6 +2,26 @@
 using namespace std;
 #include "Node.cpp"
 
+Node* reversaLL (Node *head){
+        //check base
+        if(head==NULL || head->next == NULL){
+            return head;
+        }
+
+        Node *smallAns = reversaLL (head->next);
+
+        Node *temp = smallAns;
+        while (temp->next!=NULL)
+        {
+            /* code */
+            temp=temp->next;
+        }
+        temp->next = head;
+        head->next = NULL;
+
+        return smallAns;
+}
+
 //O(n)
 Node* takeInputBetter(){
      int data ;
