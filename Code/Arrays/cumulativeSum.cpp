@@ -7,7 +7,7 @@ vector<int> getCumulativeSum(vector<int> &arr) {
 	int sumResult = 0;
 	vector<int> result;
 	//int size = sizeof(arr[0])/arr;
-	for( int i = 1 ; i < arr.size() ; i++ ){
+	for( int i = 1 ; i <= arr.size() ; i++ ){
 		for( int j = 0 ; j < i ; j++){
             //cout << arr[j];
 			sumResult += arr[j];
@@ -20,7 +20,7 @@ vector<int> getCumulativeSum(vector<int> &arr) {
 
 int main(){
 
-    vector<int> numbers{1,-2,3,4,5}; 
+    vector<int> numbers{1,2,3,4,5}; 
 
     vector<int> output = getCumulativeSum(numbers);
 
