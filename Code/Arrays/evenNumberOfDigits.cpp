@@ -4,9 +4,9 @@ using namespace std;
 
 int countDigit(int num){
 	int count = 0;
-    // if( num < 0 ){
-    //     return num;
-    // }
+    if( num <= 0 ){
+        return 1;
+    }
 	while( num > 0){
 		num = num / 10;
 		count++;
@@ -23,7 +23,7 @@ vector<int> getEvenDigitNumbers(vector<int> &arr) {
 	}
 
 	for( int i = 0 ; i < arr.size() ; i++ ){
-        if ( (countDigit(arr[i]) % 2) == 0 && (arr[i] > 0) ) {
+        if ( (countDigit(arr[i]) % 2) == 0) {
 		    resultArr.push_back(arr[i]);
         }
 	}
