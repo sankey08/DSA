@@ -1,0 +1,92 @@
+C++ Programming Tricks You Should Know
+Master some of the crucial C++ concepts and save a few lines of code
+
+1. Include All Standard Libraries in One Go
+
+For example, you can replace this (and many more):
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <string>
+#include <stack>
+#include <set>
+#include <queue>
+#include <map>
+
+With this:
+
+#include <bits/stdc++.h>
+
+2. Use Auto To Omit the Data Type of a Variable
+
+As an example, the data types of the following variables are declared during runtime.
+
+auto a = 'a';
+auto t = true;
+auto x = 1;
+auto y = 2.0;
+
+3. Comprehensive Range-Based for Loops
+
+The syntax of a range-based for loop is:
+for(range_declaration : range_expression)
+As an example, you can loop through an array of numbers using a range-based for-loop as follows:
+
+int numbers[] = {1,2,3,4,5};
+for (auto number: numbers){
+cout << number << endl;
+}
+
+4. One Liner If…Else Statements
+
+As an example, you can replace this expression:
+int age = 9;
+
+if(age < 18) {
+printf("A Child");
+} else {
+printf("An Adult");
+}
+
+With a lot neater shorthand, like this:
+
+age < 18 ? printf("A Child") : printf("An Adult");
+
+5. Swap Two Variables Without the Third
+
+You can use the XOR operator to swap two variables without using a third helper variable. Here’s an example:
+int a = 1;
+int b = 2;
+
+a ^= b ^= a ^= b;
+
+6. The --> Operator
+
+You can use the --> “operator” in a while loop as a “Goes to” operator.
+For example, you can print numbers 9 8 7 6 5 4 3 2 1 with a while loop like this:
+
+int x = 10;
+while( x --> 0 ) {
+printf("%d ", x);
+}
+
+Note: --> is actually not an operator, but rather a combination of two operators, -- and >.
+The above while is the same as while( (x--) > 0 ), which reads “decrement x by 1 and then compare the result with 0.”
+
+7. Pre-Increment Is Faster Than Post-Increment
+
+In C++, there are two operators that can be used to increment a value by 1:
+Pre-increment, ++i — Before assigning the value to the variable, the value is incremented by one.
+Post-increment, i++ — After assigning the value to the variable, the value is incremented.
+
+As a result, pre-increment, ++i, is faster than post-increment because post-increment keeps a copy of the previous value where pre-increment directly adds 1 without copying the previous value.
+
+8. Combine Assignment With a Function Call
+In C++, you can combine an assignment and a function call.
+Instead of this:
+int i;
+i = 10;
+printf("%d", i); // prints 10
+You can do this to save some code lines:
+int i;
+printf("%d", i = 10); // prints 10
